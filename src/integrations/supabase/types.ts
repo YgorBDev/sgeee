@@ -16,25 +16,31 @@ export type Database = {
     Tables: {
       estoque: {
         Row: {
+          created_at: string | null
           id: number
           material_id: number
           modalidade_id: number
           qtd_estoque: number | null
           qtd_uso: number | null
+          updated_at: string | null
         }
         Insert: {
+          created_at?: string | null
           id?: never
           material_id: number
           modalidade_id: number
           qtd_estoque?: number | null
           qtd_uso?: number | null
+          updated_at?: string | null
         }
         Update: {
+          created_at?: string | null
           id?: never
           material_id?: number
           modalidade_id?: number
           qtd_estoque?: number | null
           qtd_uso?: number | null
+          updated_at?: string | null
         }
         Relationships: [
           {
@@ -55,31 +61,43 @@ export type Database = {
       }
       materiais: {
         Row: {
+          created_at: string | null
           id: number
           nome: string
+          updated_at: string | null
         }
         Insert: {
+          created_at?: string | null
           id?: never
           nome: string
+          updated_at?: string | null
         }
         Update: {
+          created_at?: string | null
           id?: never
           nome?: string
+          updated_at?: string | null
         }
         Relationships: []
       }
       modalidades: {
         Row: {
+          created_at: string | null
           id: number
           nome: string
+          updated_at: string | null
         }
         Insert: {
+          created_at?: string | null
           id?: never
           nome: string
+          updated_at?: string | null
         }
         Update: {
+          created_at?: string | null
           id?: never
           nome?: string
+          updated_at?: string | null
         }
         Relationships: []
       }
