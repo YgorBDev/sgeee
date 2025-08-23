@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -17,8 +17,8 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 204 100% 50%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
@@ -26,17 +26,36 @@ All colors MUST be HSL.
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 142 76% 36%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 204 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Sports Dashboard Colors */
+    --sport-blue: 204 100% 50%;
+    --sport-green: 142 76% 36%;
+    --sport-orange: 25 95% 53%;
+    --sport-purple: 271 81% 56%;
+    --sport-red: 0 84% 60%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--sport-blue)), hsl(var(--sport-purple)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--sport-green)), hsl(var(--sport-blue)));
+    --gradient-warning: linear-gradient(135deg, hsl(var(--sport-orange)), hsl(var(--sport-red)));
+    
+    /* Chart Colors */
+    --chart-1: var(--sport-blue);
+    --chart-2: var(--sport-green);
+    --chart-3: var(--sport-orange);
+    --chart-4: var(--sport-purple);
+    --chart-5: var(--sport-red);
 
     --sidebar-background: 0 0% 98%;
 
