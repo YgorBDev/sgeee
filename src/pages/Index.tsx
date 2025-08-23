@@ -1,20 +1,18 @@
 import { useState, useMemo } from "react";
-import { Activity, Package, TrendingUp, BarChart3 } from "lucide-react";
+import { Activity, Package, TrendingUp, BarChart3, Loader2 } from "lucide-react";
 import { MetricsCard } from "@/components/dashboard/MetricsCard";
 import { MaterialBarChart } from "@/components/dashboard/BarChart";
 import { MaterialPieChart } from "@/components/dashboard/PieChart";
 import { MaterialsTable } from "@/components/dashboard/MaterialsTable";
 import { ModalidadeFilter } from "@/components/dashboard/ModalidadeFilter";
-import { materialsData } from "@/data/materialsData";
-import { Material, ModalidadeData, ChartData } from '@/types/materials';
+import { useMaterials, useModalidades } from "@/hooks/useMaterials";
+import { ModalidadeData, ChartData } from '@/types/materials';
 
 const Index = () => {
   const [selectedModalidade, setSelectedModalidade] = useState<string>("todas");
-
-  // Obter modalidades únicas
-  const modalidades = useMemo(() => {
-    return Array.from(new Set(materialsData.map(item => item.modalidade)));
-  }, []);
+  
+  const { data: materialsData = [], isLoading: materialsLoading, error: materialsError } = useMaterials();
+  const { data: modalidades = [], isLoading: modalidadesLoading } = useModalidades();
 
   // Filtrar dados baseado na modalidade selecionada
   const filteredMaterials = useMemo(() => {
@@ -22,7 +20,7 @@ const Index = () => {
       return materialsData;
     }
     return materialsData.filter(item => item.modalidade === selectedModalidade);
-  }, [selectedModalidade]);
+  }, [selectedModalidade, materialsData]);
 
   // Calcular métricas gerais
   const metrics = useMemo(() => {
@@ -72,6 +70,28 @@ const Index = () => {
       }
     ];
   }, [metrics]);
+
+  if (materialsLoading || modalidadesLoading) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+          <p className="text-muted-foreground">Carregando dados...</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (materialsError) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-destructive mb-2">Erro ao carregar dados</h2>
+          <p className="text-muted-foreground">Verifique sua conexão com o banco de dados.</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
