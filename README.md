@@ -1,4 +1,4 @@
----
+
 
 
 # 🎉 Bem-vindo ao seu projeto Lovable
@@ -7,7 +7,6 @@
 
 **URL do projeto:**  [Acesse aqui](https://lovable.dev/projects/39d18c3c-34af-4631-9f54-40fe759c6ab8)
 
----
 
 ## 🛠️ Como editar este projeto?
 
