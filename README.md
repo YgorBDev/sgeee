@@ -1,7 +1,8 @@
 
 
 
-# 🎉 Bem-vindo ao seu projeto Lovable
+# 🎉 Bem-vindo ao projeto SGEEE - Sistema de Gestão de Estoque de Equipamentos Esportivos
+
 
 ## ℹ️ Informações do Projeto
 
@@ -68,22 +69,6 @@ Este projeto foi construído com:
 * ⚛️ **React**
 * 🎨 **shadcn-ui**
 * 💨 **Tailwind CSS**
-
----
-
-## 🚀 Como publicar/deploy?
-
-Basta abrir o [Lovable](https://lovable.dev/projects/39d18c3c-34af-4631-9f54-40fe759c6ab8), ir em **Share → Publish** e publicar sua aplicação.
-
----
-
-## 🌐 Conectar um domínio personalizado
-
-Você pode conectar seu próprio domínio:
-
-1. Vá até **Project > Settings > Domains**
-2. Clique em **Connect Domain**
-3. Siga o [guia oficial de configuração](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
 ---
 
